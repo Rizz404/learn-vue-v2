@@ -7,40 +7,28 @@
     <!-- Navbar Global -->
     <header class="border-b border-border bg-surface px-8 py-4 flex items-center gap-6">
       <div class="font-bold text-primary tracking-widest uppercase">VUE-ROUTER</div>
-
       <nav class="flex gap-4">
-        <!-- Gunakan RouterLink, BUKAN <a> tag -->
-        <!-- Active class akan otomatis ditambahkan oleh Vue Router -->
-        <RouterLink
-          to="/"
-          class="text-sm font-medium text-content-secondary hover:text-content transition-colors"
-          active-class="!text-primary underline underline-offset-4"
-        >
-          Beranda
+        <RouterLink to="/" class="..." active-class="!text-primary underline">Beranda</RouterLink>
+        <RouterLink to="/about" class="..." active-class="!text-primary underline"
+          >Tentang
         </RouterLink>
-
-        <RouterLink
-          to="/about"
-          class="text-sm font-medium text-content-secondary hover:text-content transition-colors"
-          active-class="!text-primary underline underline-offset-4"
+        <RouterLink to="/products" class="..." active-class="!text-primary underline"
+          >Produk</RouterLink
         >
-          Tentang
-        </RouterLink>
-
-        <RouterLink
-          to="/products"
-          class="text-sm font-medium text-content-secondary hover:text-content transition-colors"
-          active-class="!text-primary underline underline-offset-4"
+        <!-- Link Baru -->
+        <RouterLink to="/optimize" class="..." active-class="!text-primary underline"
+          >Optimasi</RouterLink
         >
-          Produk
-        </RouterLink>
       </nav>
     </header>
 
-    <!-- Konten Halaman (Outlet) -->
     <div class="flex-1 p-8 max-w-3xl mx-auto w-full">
-      <!-- Halaman yang aktif akan dirender di sini! -->
-      <RouterView />
+      <!-- VUE ROUTER 4 KEEPALIVE SYNTAX -->
+      <RouterView v-slot="{ Component }">
+        <KeepAlive include="OptimizeView">
+          <component :is="Component" />
+        </KeepAlive>
+      </RouterView>
     </div>
   </main>
 </template>
