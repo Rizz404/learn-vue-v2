@@ -1,11 +1,13 @@
 import AboutView from '@/views/AboutView.vue'
 import HomeView from '@/views/HomeView.vue'
+import HomeViewFor72 from '@/views/HomeViewFor72.vue'
 import ProductDetail from '@/views/ProductDetail.vue'
 import ProductList from '@/views/ProductList.vue'
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
-  { path: '/', name: 'home', component: HomeView },
+  // { path: '/', name: 'home', component: HomeView },
+  { path: '/', name: 'home', component: HomeViewFor72 },
   { path: '/about', name: 'about', component: AboutView },
   { path: '/products', name: 'product-list', component: ProductList },
   { path: '/products/:id', name: 'product-detail', component: ProductDetail },
