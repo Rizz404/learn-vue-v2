@@ -8,3 +8,11 @@ export interface CartItem {
   name: string
   price: number
 }
+
+export interface TodoItem {
+  id: string
+  title: string
+  description: string
+  isCompleted: boolean
+  createdAt: number
+}
