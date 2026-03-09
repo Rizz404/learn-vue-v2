@@ -11,11 +11,11 @@ const routes: RouteRecordRaw[] = [
     name: 'todo-list',
     component: () => import('@/views/TodoListView.vue'),
   },
-  // {
-  //   path: '/todo/:id',
-  //   name: 'todo-detail',
-  //   component: () => import('@/views/TodoDetailView.vue'),
-  // },
+  {
+    path: '/todo/:id',
+    name: 'todo-detail',
+    component: () => import('@/views/TodoDetailView.vue'),
+  },
 ]
 
 const routerFor91 = createRouter({
