@@ -1,10 +1,6 @@
+import type { UserProfile } from '@/types'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
-
-interface UserProfile {
-  name: string
-  role: 'admin' | 'guest'
-}
 
 export const useUserStore = defineStore('user', () => {
   // * Statenya

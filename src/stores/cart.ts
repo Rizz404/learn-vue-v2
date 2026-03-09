@@ -2,12 +2,7 @@ import { useLocalStorage } from '@/composables/useLocalStorage'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
 import { useUserStore } from './user'
-
-interface CartItem {
-  id: number
-  name: string
-  price: number
-}
+import type { CartItem } from '@/types'
 
 export const useCartStore = defineStore('cart', () => {
   // * State dengan persistance via composable
